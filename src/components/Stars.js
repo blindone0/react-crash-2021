@@ -2,7 +2,7 @@ import React from 'react'
 
 const Stars = () => {
   return (
-    <div>
+    <>
     <div className='p p-1'></div>
     <div className='p p-2'></div>
     <div className='p p-3'></div>
@@ -21,7 +21,23 @@ const Stars = () => {
     <div className='p p-71'></div>
     <div className='p p-81'></div>
     <div className='p p-91'></div>
-    </div>
+<div className="meteor-1"></div>
+<div className="meteor-3"></div>
+<div className="meteor-2"></div>
+<div className="meteor-4"></div>
+<div className="meteor-5"></div>
+<div className="meteor-6"></div>
+<div className="meteor-7"></div>
+<div className="meteor-8"></div>
+<div className="meteor-9"></div>
+<div className="meteor-10"></div>
+<div className="meteor-11"></div>
+<div className="meteor-12"></div>
+<div className="meteor-13"></div>
+<div className="meteor-14"></div>
+<div className="meteor-15"></div>
+    </>
+    
   )
 }
 

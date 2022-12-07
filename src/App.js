@@ -93,7 +93,8 @@ const App = () => {
 
   return (
     <Router>
-      <div>
+      <div className=''>
+      <div className="star"></div>
       <Navbar/>
       <Sun/>
       
