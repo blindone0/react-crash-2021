@@ -7,9 +7,8 @@ const Navbar = () => {
             <ul>
               <li><a href="#">Blog</a></li>
               <li><a href="#">Magic</a>
-                <ul className="dropdown">
-                  <li><a href="#">Tarot</a></li>
-                  <li><a href="#">Astrology</a></li>
+                <ul className="dropdown orbit">
+                  <li><a href="#"></a></li>
                 </ul>
               </li>
             </ul>

@@ -5,8 +5,6 @@ $s: 300; // star數量
 
 
 html,body {
-  height: 100%;
-  overflow: hidden;
   background-image: radial-gradient(ellipse at top , #080e21 0%,  #1b2735 95%);
 }
 
@@ -455,6 +453,7 @@ h1,h3,p,label {
 .logo {
   color: white;
   font-family: Sail;
+  margin-left: 25%;
 }
 
 img{
@@ -492,3 +491,18 @@ h1{
 #logo{
   max-height: 100px;
 }
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.orbit{
+  animation: orbit 10s linear infinite;
+}
+  
