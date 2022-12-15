@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { Canvas, useLoader } from '@react-three/fiber'
+import { OrbitControls, Stars } from "@react-three/drei";
+import { Physics, usePlane, useBox, useSphere, useSpring } from "@react-three/cannon";
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Tasks from './components/Tasks'
@@ -13,6 +16,53 @@ import Rplanet from './components/Rplanet'
 import Bplanet from './components/Bplanet'
 import Lplanet from './components/Lplanet'
 import Mplanet from './components/Mplanet'
+import { TextureLoader } from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+
+
+function Saturn()  {
+  const gltf = useLoader(GLTFLoader, 'Saturn.glb')
+  return (
+    <mesh
+      scale={[0.05,0.05,0.05]}
+    >
+    <primitive  object={gltf.scene}/>
+    </mesh>
+  )
+}
+
+
+function Earth() {
+  const [earth] = useLoader(TextureLoader, [
+    "2k_earth_daymap.jpg"
+  ])
+	const [ref, api] = useSphere(() => ({ mass: 1, position: [0, 2, 0] }));
+	return (
+		<mesh
+			onClick={() => {
+				api.velocity.set(0, 2, 0);
+			}}
+			ref={ref}
+			position={[0, 2, 0]}
+		>
+      <sphereBufferGeometry attach="geometry"/>
+			{/* <boxBufferGeometry attach="geometry" /> */}
+			<meshLambertMaterial map={earth} />
+		</mesh>
+	);
+}
+
+function Plane() {
+	const [ref] = usePlane(() => ({
+		rotation: [-Math.PI / 2, 0, 0],
+	}));
+	return (
+		<mesh ref={ref} rotation={[-Math.PI / 2, 0, 0]}>
+			<planeBufferGeometry attach="geometry" args={[100 , 100]} />
+			<meshLambertMaterial attach="material" transparent={true} opacity={0} />
+		</mesh>
+	);
+}
 
 const App = () => {
   const [showAddTask, setShowAddTask] = useState(false)
@@ -95,8 +145,24 @@ const App = () => {
     )
   }
 
+  console.log(OrbitControls);
+
   return (
     <Router>
+      <Suspense fallback={null}>
+      	{/* <Canvas camera={{ fov: 35, zoom: 0.001 }}> */}
+        <Canvas camera={{fov : 105 , near: 1, far: 10000, position : [100, 0, 0]}}>
+		<OrbitControls />
+		<Stars />
+		<ambientLight intensity={0.5} />
+		<spotLight position={[10, 15, 10]} angle={0.3} />
+		<Physics>
+      <Saturn/>
+			<Plane />
+		</Physics>
+	</Canvas>
+  </Suspense>
+      
       <div className="star"></div>
       <Navbar/>
       <Sun/>

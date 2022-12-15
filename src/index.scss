@@ -6,6 +6,12 @@ $s: 1000; // star數量 кількість
 
 html,body {
   background-image: radial-gradient(ellipse at top , #080e21 0%,  #1b2735 95%);
+  max-width: 100%;
+}
+
+canvas {
+  height: 50vh;
+  position: relative;
 }
 
 $shadow: ();
@@ -50,24 +56,7 @@ $shadow: ();
   }
 }
 
-@keyframes meteor {
-  0% {
-    opacity: 1;
-    margin-top: 10px;
-    margin-right: 10px;
-  }
-  12% {
-    opacity: 0;
-  }
-  15% {
-    margin-top: 300px;
-    margin-left: -600px;
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
+
 
 .centered {
   justify-content: center; /* center items horizontally, in this case */
