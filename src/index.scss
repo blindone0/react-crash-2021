@@ -1,5 +1,5 @@
-$n: 15; // 流星數量
-$s: 300; // star數量
+$n: 5; // 流星數量 кількість метеорів
+$s: 1000; // star數量 кількість
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
@@ -11,8 +11,8 @@ html,body {
 $shadow: ();
 
 @for $i from 1 through $s {
-  $x: random(1920);
-  $y: random(1000);
+  $x: random(2000vh);
+  $y: random(1000vh);
   $shadow: $shadow, ( $x+px $y+px #fff) !global;
 }
 
@@ -53,8 +53,8 @@ $shadow: ();
 @keyframes meteor {
   0% {
     opacity: 1;
-    margin-top: -300px;
-    margin-right: -300px;
+    margin-top: 10px;
+    margin-right: 10px;
   }
   12% {
     opacity: 0;
@@ -207,8 +207,8 @@ footer {
 .image{
   height: auto;
   width: auto;
-  max-width: 50%;
-  min-width: 50%;
+  max-width: 20%;
+  min-width: 20%;
 }
 
 .moon {
@@ -284,120 +284,120 @@ li:nth-child(7) {
   box-shadow: inset 2.4px -0.8px 0 0px #414043;
 }
 
-.p{
-  z-index: -1;
-  position:fixed;
-  left:0px;
-  top:50px;
-  width:1px;
-  height:1px;
-  background-color:white;
-  position:fixed;
-  animation-name:particleAnimation;
-  animation-timing-function: infinite;
-  animation-iteration-count: infinite;
-  -ms-transform: rotate(20deg); /* IE 9 */
-  transform: rotate(20deg);
-}
-.p::before{
-  position:absolute;
-  display:block;
-  content:"";
-  width:100px;
-  right:1px;
-  top:0px;
-  height:1px;
-  background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(255,255,255,0.4) 100%); 
-}
-.p-1{
-  animation-duration:20s;
-  left: 10%;
-}
-.p-2{
-  animation-duration:10s;
-  top:60%;
-  left: 40%;
-}
-.p-3{
-  animation-duration:40s;
-  top:90%;
-  left: 60%;
-}
+// .p{
+//   z-index: -1;
+//   position:fixed;
+//   left:0px;
+//   top:50px;
+//   width:1px;
+//   height:1px;
+//   background-color:white;
+//   position:fixed;
+//   animation-name:particleAnimation;
+//   animation-timing-function: infinite;
+//   animation-iteration-count: infinite;
+//   -ms-transform: rotate(20deg); /* IE 9 */
+//   transform: rotate(20deg);
+// }
+// .p::before{
+//   position:absolute;
+//   display:block;
+//   content:"";
+//   width:100px;
+//   right:1px;
+//   top:0px;
+//   height:1px;
+//   background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(255,255,255,0.4) 100%); 
+// }
+// .p-1{
+//   animation-duration:20s;
+//   left: 10%;
+// }
+// .p-2{
+//   animation-duration:10s;
+//   top:60%;
+//   left: 40%;
+// }
+// .p-3{
+//   animation-duration:40s;
+//   top:90%;
+//   left: 60%;
+// }
 
-.p-4{
-  animation-duration:15s;
-  left: 25%;
-}
-.p-5{
-  animation-duration:11s;
-  top:30%;
-  left: 20%;
-}
-.p-6{
-  animation-duration:50s;
-  top:33%;
-  left: 10%;
-}
+// .p-4{
+//   animation-duration:15s;
+//   left: 25%;
+// }
+// .p-5{
+//   animation-duration:11s;
+//   top:30%;
+//   left: 20%;
+// }
+// .p-6{
+//   animation-duration:50s;
+//   top:33%;
+//   left: 10%;
+// }
 
-.p-7{
-  animation-duration:5s;
-  left: 50%;
-}
-.p-8{
-  animation-duration:3s;
-  top:10%;
-  left: 30%;
-}
-.p-9{
-  animation-duration:11s;
-  top:40%;
-  left: 60%;
-}
+// .p-7{
+//   animation-duration:5s;
+//   left: 50%;
+// }
+// .p-8{
+//   animation-duration:3s;
+//   top:10%;
+//   left: 30%;
+// }
+// .p-9{
+//   animation-duration:11s;
+//   top:40%;
+//   left: 60%;
+// }
 
-.p-11{
-  animation-duration:7s;
-  left: 10%;
-}
-.p-21{
-  animation-duration:5s;
-  top:60%;
-  left: 40%;
-}
-.p-31{
-  animation-duration:11s;
-  top:90%;
-  left: 60%;
-}
+// .p-11{
+//   animation-duration:7s;
+//   left: 10%;
+// }
+// .p-21{
+//   animation-duration:5s;
+//   top:60%;
+//   left: 40%;
+// }
+// .p-31{
+//   animation-duration:11s;
+//   top:90%;
+//   left: 60%;
+// }
 
-.p-41{
-  animation-duration:4s;
-  left: 25%;
-}
-.p-51{
-  animation-duration:2s;
-  top:30%;
-  left: 20%;
-}
-.p-61{
-  animation-duration:1s;
-  top:33%;
-  left: 10%;
-}
+// .p-41{
+//   animation-duration:4s;
+//   left: 25%;
+// }
+// .p-51{
+//   animation-duration:2s;
+//   top:30%;
+//   left: 20%;
+// }
+// .p-61{
+//   animation-duration:1s;
+//   top:33%;
+//   left: 10%;
+// }
 
-.p-71{
-  animation-duration:4s;
-  left: 50%;
-}
-.p-81{
-  animation-duration:1s;
-  top:10%;
-  left: 30%;
-}
-.p-91{
-  animation-duration:4s;
-  top:40%;
-  left: 60%;
-}
+// .p-71{
+//   animation-duration:4s;
+//   left: 50%;
+// }
+// .p-81{
+//   animation-duration:1s;
+//   top:10%;
+//   left: 30%;
+// }
+// .p-91{
+//   animation-duration:4s;
+//   top:40%;
+//   left: 60%;
+// }
 
 h1,h3,p,label {
   color: whitesmoke;
@@ -505,4 +505,50 @@ h1{
 .orbit{
   animation: orbit 10s linear infinite;
 }
-  
+
+
+.bplanet {
+
+  bottom: 200px;
+  right: 200px;
+}
+
+.rplanet {
+  position: relative;
+  img{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+}
+
+.bplanet {
+  position: relative;
+  img{
+    position: absolute;
+    left: 200px;
+    top: 50vh;
+  }
+}
+
+.lplanet {
+  position: relative;
+  img{
+    position: absolute;
+    left: 150px;
+    top: 400px;
+  }
+}
+
+.mplanet {
+  position: relative;
+  img{
+    position: absolute;
+    right: 0px;
+    top: 200px;
+  }
+}
+
+#root {
+  // height: 0px;
+}

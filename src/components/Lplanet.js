@@ -1,14 +1,14 @@
 import React from 'react'
-import image from '../imgs/IMG_7848.PNG'
+import image from '../imgs/IMG_0464.PNG'
 
-const Rplanet = () => {
+const Lplanet = () => {
   return (
     <>
-        <div className="rplanet">
+        <div className="lplanet">
             <img className="image" src={image} />
         </div>
     </>
   )
 }
 
-export default Rplanet
+export default Lplanet

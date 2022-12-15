@@ -9,6 +9,10 @@ import About from './components/About'
 import Moon from './components/Moon'
 import Sun from './components/Sun'
 import Navbar from './components/Navbar'
+import Rplanet from './components/Rplanet'
+import Bplanet from './components/Bplanet'
+import Lplanet from './components/Lplanet'
+import Mplanet from './components/Mplanet'
 
 const App = () => {
   const [showAddTask, setShowAddTask] = useState(false)
@@ -93,10 +97,13 @@ const App = () => {
 
   return (
     <Router>
-      <div className=''>
       <div className="star"></div>
       <Navbar/>
       <Sun/>
+      <Rplanet/>
+      <Bplanet/>
+      <Mplanet/>
+      <Lplanet/>
       
       <div className='container'>
         
@@ -126,7 +133,6 @@ const App = () => {
           <Route path='/about' element={<About />} />
         </Routes>
         <Footer />
-      </div>
       </div>
     </Router>
   )
