@@ -18,13 +18,22 @@ import Lplanet from './components/Lplanet'
 import Mplanet from './components/Mplanet'
 import { TextureLoader } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import { useFrame } from '@react-three/fiber'
 
 
 function Saturn()  {
+  useFrame(({clock}) => {
+    const a = clock.getElapsedTime()
+    console.log(a)
+    myMesh.current.rotation.z = Math.sin(clock.getElapsedTime())  
+  })
+  const myMesh = React.useRef()
   const gltf = useLoader(GLTFLoader, 'Saturn.glb')
   return (
     <mesh
+      ref={myMesh}
       scale={[0.05,0.05,0.05]}
+      rotation={[0,0,-4]}
     >
     <primitive  object={gltf.scene}/>
     </mesh>
@@ -151,18 +160,19 @@ const App = () => {
     <Router>
       <Suspense fallback={null}>
       	{/* <Canvas camera={{ fov: 35, zoom: 0.001 }}> */}
-        <Canvas camera={{fov : 105 , near: 1, far: 10000, position : [100, 0, 0]}}>
+        <Canvas camera={{fov : 75 , near: 1, far: 10000, position : [100, 0, 0]}}>
 		<OrbitControls />
 		<Stars />
 		<ambientLight intensity={0.5} />
 		<spotLight position={[10, 15, 10]} angle={0.3} />
+    {/* <Sun/> */}
 		<Physics>
       <Saturn/>
 			<Plane />
 		</Physics>
 	</Canvas>
   </Suspense>
-      
+      <div className='wrapp'>
       <div className="star"></div>
       <Navbar/>
       <Sun/>
@@ -171,7 +181,7 @@ const App = () => {
       <Mplanet/>
       <Lplanet/>
       
-      <div className='container'>
+      <div className='container testing'>
         
         <Moon/>
         <Header
@@ -199,6 +209,7 @@ const App = () => {
           <Route path='/about' element={<About />} />
         </Routes>
         <Footer />
+      </div>
       </div>
     </Router>
   )
