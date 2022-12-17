@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react'
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import { Canvas, useLoader } from '@react-three/fiber'
+import { Canvas, useLoader, useThree } from '@react-three/fiber'
 import { OrbitControls, Stars } from "@react-three/drei";
 import { Physics, usePlane, useBox, useSphere, useSpring } from "@react-three/cannon";
 import Header from './components/Header'
@@ -19,11 +19,15 @@ import Mplanet from './components/Mplanet'
 import { TextureLoader } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { useFrame } from '@react-three/fiber'
+import { ReactComponent as Telegram } from './imgs/Telegram_logo.svg';
+import { ReactComponent as TikTok } from './imgs/TikTok-Logo.wine.svg';
+import { ReactComponent as YouTube } from './imgs/YouTube-Logo.wine.svg';
 
 
 function Saturn()  {
   useFrame(({clock}) => {
     const a = clock.getElapsedTime()
+    
     console.log(a)
     myMesh.current.rotation.z = Math.sin(clock.getElapsedTime())  
   })
@@ -41,34 +45,19 @@ function Saturn()  {
 }
 
 
-function Earth() {
-  const [earth] = useLoader(TextureLoader, [
-    "2k_earth_daymap.jpg"
-  ])
-	const [ref, api] = useSphere(() => ({ mass: 1, position: [0, 2, 0] }));
-	return (
-		<mesh
-			onClick={() => {
-				api.velocity.set(0, 2, 0);
-			}}
-			ref={ref}
-			position={[0, 2, 0]}
-		>
-      <sphereBufferGeometry attach="geometry"/>
-			{/* <boxBufferGeometry attach="geometry" /> */}
-			<meshLambertMaterial map={earth} />
-		</mesh>
-	);
-}
-
 function Plane() {
+  const camera = useThree(state => state.camera)
+  useFrame(({clock}) => {    
+
+    camera.position.z = clock.getElapsedTime()*2
+  })
 	const [ref] = usePlane(() => ({
 		rotation: [-Math.PI / 2, 0, 0],
 	}));
 	return (
-		<mesh ref={ref} rotation={[-Math.PI / 2, 0, 0]}>
+		<mesh ref={ref} rotation={[-Math.PI / 2, 0, 8]}>
 			<planeBufferGeometry attach="geometry" args={[100 , 100]} />
-			<meshLambertMaterial attach="material" transparent={true} opacity={0} />
+			<meshLambertMaterial rotation={[-Math.PI / 2, 0, 8]} attach="material" transparent={true} opacity={0} />
 		</mesh>
 	);
 }
@@ -188,23 +177,39 @@ const App = () => {
           onAdd={() => setShowAddTask(!showAddTask)}
           showAdd={showAddTask}
         />
+              <div className='logogroup'>
+        <a className='logo-tg' href="#">
+        <Telegram className='logo-tg'/>
+        </a>
+
+        <a className='logo-tk' href="#">
+        <TikTok  className='logo-tk' />
+        </a>
+
+        <a className='logo-yt' href="#">
+        <YouTube className='logo-yt'/>
+        </a>
+
+
+
+      </div>
         <Routes>
           <Route
             path='/'
-            element={
-              <>
-                {showAddTask && <AddTask onAdd={addTask} />}
-                {tasks.length > 0 ? (
-                  <Tasks
-                    tasks={tasks}
-                    onDelete={deleteTask}
-                    onToggle={toggleReminder}
-                  />
-                ) : (
-                  'No Tasks To Show'
-                )}
-              </>
-            }
+            // element={
+            //   // <>
+            //   //   {showAddTask && <AddTask onAdd={addTask} />}
+            //   //   {tasks.length > 0 ? (
+            //   //     <Tasks
+            //   //       tasks={tasks}
+            //   //       onDelete={deleteTask}
+            //   //       onToggle={toggleReminder}
+            //   //     />
+            //   //   ) : (
+            //   //     'No Tasks To Show'
+            //   //   )}
+            //   // </>
+            // }
           />
           <Route path='/about' element={<About />} />
         </Routes>

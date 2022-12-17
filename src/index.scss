@@ -7,6 +7,7 @@ $s: 1000; // star數量 кількість
 html,body {
   background-image: radial-gradient(ellipse at top , #080e21 0%,  #1b2735 95%);
   max-width: 100%;
+  width: 100%;
 }
 
 canvas {
@@ -14,6 +15,28 @@ canvas {
 }
 
 
+.logogroup  {
+display: flex;
+align-items: center;
+justify-content: center;
+height: 10vh;
+
+}
+
+.logo-tk{
+  max-height: 100px;
+  max-width: 100px;
+}
+
+.logo-yt{
+  max-height: 100px;
+  max-width: 150px;
+}
+
+.logo-tg{
+  height: 75px;
+  max-width: 100px;
+}
 
 .wrapp {
   position: absolute;
@@ -87,9 +110,6 @@ $shadow: ();
   display: flex;
 }
 
-a{
-  color: white;
-}
 
 .sun {
   display:flex;
@@ -351,6 +371,7 @@ h1,h3,p,label {
   color: white;
   font-family: Sail;
   margin-left: 25%;
+  display: block;
 }
 
 img{

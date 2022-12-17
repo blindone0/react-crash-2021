@@ -2,6 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useLocation } from 'react-router-dom'
 import Button from './Button'
+import { ReactComponent as Telegram } from '../imgs/Telegram_logo.svg';
+import { ReactComponent as TikTok } from '../imgs/TikTok-Logo.wine.svg';
+import { ReactComponent as YouTube } from '../imgs/YouTube-Logo.wine.svg';
 
 const Header = ({ title, onAdd, showAdd }) => {
   const location = useLocation()
@@ -9,13 +12,15 @@ const Header = ({ title, onAdd, showAdd }) => {
   return (
     <header className='header'>
       <h1 className='logo'>{title}</h1>
-      {location.pathname === '/' && (
+
+
+      {/* {location.pathname === '/' && (
         <Button
           color={showAdd ? 'red' : 'black'}
           text={showAdd ? 'Close' : 'Add'}
           onClick={onAdd}
         />
-      )}
+      )} */}
     </header>
   )
 }
