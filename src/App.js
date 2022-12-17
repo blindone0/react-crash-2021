@@ -49,7 +49,7 @@ function Plane() {
   const camera = useThree(state => state.camera)
   useFrame(({clock}) => {    
 
-    camera.position.z = clock.getElapsedTime()*2
+    camera.position.z = Math.sin(clock.getElapsedTime())
   })
 	const [ref] = usePlane(() => ({
 		rotation: [-Math.PI / 2, 0, 0],
