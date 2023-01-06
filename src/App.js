@@ -22,13 +22,15 @@ import { useFrame } from '@react-three/fiber'
 import { ReactComponent as Telegram } from './imgs/Telegram_logo.svg';
 import { ReactComponent as TikTok } from './imgs/TikTok-Logo.wine.svg';
 import { ReactComponent as YouTube } from './imgs/YouTube-Logo.wine.svg';
+import Email from './components/Email';
+
 
 
 function Saturn()  {
   useFrame(({clock}) => {
-    const a = clock.getElapsedTime()
+    // const a = clock.getElapsedTime()
     
-    console.log(a)
+    // console.log(a)
     myMesh.current.rotation.z = Math.sin(clock.getElapsedTime())  
   })
   const myMesh = React.useRef()
@@ -173,6 +175,7 @@ const App = () => {
       <div className='container testing'>
         
         <Moon/>
+        <Email/>
         <Header
           onAdd={() => setShowAddTask(!showAddTask)}
           showAdd={showAddTask}
@@ -181,13 +184,11 @@ const App = () => {
         <a className='logo-tg' href="#">
         <Telegram className='logo-tg'/>
         </a>
-
-        <a className='logo-tk' href="#">
-        <TikTok  className='logo-tk' />
-        </a>
-
         <a className='logo-yt' href="#">
         <YouTube className='logo-yt'/>
+        </a>
+        <a className='logo-tk' href="#">
+        <TikTok  className='logo-tk' />
         </a>
 
 
