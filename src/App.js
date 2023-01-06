@@ -147,6 +147,9 @@ const App = () => {
 
   console.log(OrbitControls);
 
+
+
+
   return (
     <Router>
       <Suspense fallback={null}>
@@ -180,16 +183,21 @@ const App = () => {
           onAdd={() => setShowAddTask(!showAddTask)}
           showAdd={showAddTask}
         />
+      
               <div className='logogroup'>
-        <a className='logo-tg' href="#">
-        <Telegram className='logo-tg'/>
-        </a>
-        <a className='logo-yt' href="#">
-        <YouTube className='logo-yt'/>
-        </a>
-        <a className='logo-tk' href="#">
+        <a className='logo-tk' href="https://tiktok.com/@shootingstarsgarden">
         <TikTok  className='logo-tk' />
         </a>
+
+        <a className='logo-yt' href="https://youtube.com/@shootingstarsgardentarot327">
+        <YouTube className='logo-yt'/>
+        </a>
+
+        <a className='logo-tg' href="https://t.me/shootingstarsgarden">
+        <Telegram className='logo-tg'/>
+        </a>
+
+        
 
 
 

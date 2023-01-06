@@ -1,6 +1,12 @@
 import emailjs from '@emailjs/browser';
 import { useRef } from 'react'
 
+import React from 'react';
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+
+
+
 export const Email = () => {
     const form = useRef();
   
@@ -10,6 +16,7 @@ export const Email = () => {
       emailjs.sendForm('service_GARDEN', 'template_0e3mpj1', form.current, 'nIP-0HbzXnCr9HBDY')
         .then((result) => {
             console.log(result.text);
+            document.getElementById("buton").disabled = true;
         }, (error) => {
             console.log(error.text);
         });
@@ -19,11 +26,15 @@ export const Email = () => {
       <form ref={form} onSubmit={sendEmail}>
         <label>Your Name</label>
         <input type="text" name="user_name" />
-        <label>Yourn Email</label>
-        <input type="email" name="user_email" />
-        <label>Your Question to Oracle</label>
+        <label>Your telephone/email</label>
+        <input type="text" name="user_email" />
+        <label>Your question to Oracle</label>
         <textarea name="message" />
-        <button type="submit">Ask Tarot Question</button> 
+
+        <Popup trigger={<button id="buton" type="submit">Ask Tarot Question</button>} position="right center">
+        <div>Your question was sent</div>
+        </Popup>
+        
       </form>
     );
   };    
