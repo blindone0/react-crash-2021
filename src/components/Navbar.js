@@ -5,8 +5,8 @@ const Navbar = () => {
     <>
         <nav role="navigation">
             <ul>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Magic</a>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a>
                 <ul className="dropdown orbit">
                   <li><a href="#"></a></li>
                 </ul>

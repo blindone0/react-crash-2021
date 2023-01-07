@@ -12,11 +12,11 @@ export const Email = () => {
   
     const sendEmail = (e) => {
       e.preventDefault();
-  
+      document.getElementById("buton").disabled = true;
       emailjs.sendForm('service_GARDEN', 'template_0e3mpj1', form.current, 'nIP-0HbzXnCr9HBDY')
         .then((result) => {
             console.log(result.text);
-            document.getElementById("buton").disabled = true;
+            
         }, (error) => {
             console.log(error.text);
         });
