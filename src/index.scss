@@ -4,6 +4,35 @@ $s: 1000; // star數量 кількість
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
 
+#header {
+  position: relative;
+  font-size: 48px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #0ff, 0 0 70px #0ff, 0 0 80px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
+  animation: warp-speed 5s linear 1;
+}
+
+@keyframes warp-speed {
+  0% {
+    transform: translate3d(0, 100%, 0) scale(0.5);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  20% {
+    transform: translate3d(0, -20%, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, -40%, 0) scale(1);
+    opacity: 1;
+  }
+}
+
 html,body {
   background-image: radial-gradient(ellipse at top , #080e21 0%,  #1b2735 95%);
   max-width: 100%;

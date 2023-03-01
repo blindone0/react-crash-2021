@@ -167,6 +167,7 @@ const App = () => {
 	</Canvas>
   </Suspense>
       <div className='wrapp'>
+        <h1 id='header'>Accurate Tarot Card Predictions by Expert Reader</h1>
       <div className="star"></div>
       <Navbar/>
       <Sun/>
