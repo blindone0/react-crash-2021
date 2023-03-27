@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div>
       <h4>Version 1.0.2</h4>
-      <h6>Forked by partlyBlind0ne</h6>
+      <h6>Forked by Blind0ne</h6>
       <Link to='/'>Go Back</Link>
     </div>
   )

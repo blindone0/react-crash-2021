@@ -184,6 +184,7 @@ const App = () => {
           onAdd={() => setShowAddTask(!showAddTask)}
           showAdd={showAddTask}
         />
+        
       
               <div className='logogroup'>
         <a className='logo-tk' href="https://tiktok.com/@shootingstarsgarden">
@@ -203,6 +204,13 @@ const App = () => {
 
 
       </div>
+      <p>Welcome to shootingstarsgarden, your trusted source for accurate tarot card predictions. Our expert readers have years of experience in tarot reading and can provide you with insightful and personalized readings that will help you gain clarity and perspective on your life's challenges.
+
+Whether you're facing a difficult decision, feeling uncertain about your future, or just need guidance and support, our tarot card readings can provide you with the answers and insights you need to move forward with confidence.
+
+At shootingstarsgarden, we believe that everyone deserves access to accurate and insightful tarot card readings. That's why we offer affordable and convenient readings that can be done online or over the phone. We also offer a satisfaction guarantee, so you can be confident that you're getting the best service possible.
+
+Ready to discover what the future holds? Contact us now to book your tarot card reading with one of our expert readers. We look forward to helping you gain the clarity and insights you need to navigate life's challenges with confidence.</p>
         <Routes>
           <Route
             path='/'
