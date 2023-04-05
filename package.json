@@ -19,6 +19,7 @@
     "react-dom": "^18.1.0",
     "react-icons": "^4.1.0",
     "react-meta-tags": "^1.0.1",
+    "react-paypal-button-v2": "^2.6.3",
     "react-router-dom": "^6.0.2",
     "react-scripts": "^5.0.1",
     "reactjs-popup": "^2.0.5",

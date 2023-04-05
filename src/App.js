@@ -23,6 +23,7 @@ import { ReactComponent as Telegram } from './imgs/Telegram_logo.svg';
 import { ReactComponent as TikTok } from './imgs/TikTok-Logo.wine.svg';
 import { ReactComponent as YouTube } from './imgs/YouTube-Logo.wine.svg';
 import Email from './components/Email';
+import { PayPalButton } from "react-paypal-button-v2";
 
 
 
@@ -194,16 +195,29 @@ const App = () => {
         <a className='logo-yt' href="https://youtube.com/@shootingstarsgardentarot327">
         <YouTube className='logo-yt'/>
         </a>
-
-        <a className='logo-tg' href="https://t.me/shootingstarsgarden">
+        <a className='logo-tg' href="https://t.me/kovinyovich">
         <Telegram className='logo-tg'/>
         </a>
 
-        
+
+
 
 
 
       </div>
+      <div>
+        <PayPalButton
+        amount="10"
+        // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
+        onSuccess={(details, data) => {
+          alert("Transaction completed by " + details.payer.name.given_name);
+        }}
+
+        options={{
+          clientId: "kovinyovadasha@gmail.com"
+        }}
+      />
+        </div>
       <p>Welcome to shootingstarsgarden, your trusted source for accurate tarot card predictions. Our expert readers have years of experience in tarot reading and can provide you with insightful and personalized readings that will help you gain clarity and perspective on your life's challenges.
 
 Whether you're facing a difficult decision, feeling uncertain about your future, or just need guidance and support, our tarot card readings can provide you with the answers and insights you need to move forward with confidence.
