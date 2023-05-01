@@ -188,14 +188,14 @@ const App = () => {
         
       
               <div className='logogroup'>
-        <a className='logo-tk' href="https://tiktok.com/@shootingstarsgarden">
+        <a className='logo-tk' href="https://tiktok.com/@galaxywitchcenter">
         <TikTok  className='logo-tk' />
         </a>
 
         <a className='logo-yt' href="https://youtube.com/@shootingstarsgardentarot327">
         <YouTube className='logo-yt'/>
         </a>
-        <a className='logo-tg' href="https://t.me/kovinyovich">
+        <a className='logo-tg' href="https://t.me/galaxypriestess">
         <Telegram className='logo-tg'/>
         </a>
 
